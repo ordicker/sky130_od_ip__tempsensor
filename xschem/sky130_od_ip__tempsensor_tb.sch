@@ -25,6 +25,7 @@ C {devices/code.sym} -190 160 0 0 {name=s1 only_toplevel=false value=".lib /usr/
 C {devices/code.sym} 40 160 0 0 {name=s2 only_toplevel=false value=".control
 dc temp -40 125 10
 plot V(vbe1) V(vbe2)-V(vbe1) V(vbe1)+10.3766*(V(vbe2)-V(vbe1))
+plot 10.3766/(10.3766+V(vbe1)/(V(vbe2)-V(vbe1)))
 .endc"}
 C {devices/opin.sym} 190 -50 0 0 {name=p1 lab=vbe1}
 C {devices/gnd.sym} -220 20 0 0 {name=l4 lab=GND}
