@@ -7,3 +7,12 @@ Based on [design](https://picture.iczhiku.com/resource/ieee/wHKkdSugHJQARbmb.pdf
 export PDK_ROOT=/usr/local/share/pdk
 export PDK=sky130A
 ```
+## Setup 
+```shell
+cp $PDK_ROOT/sky130A/libs.tech/xschem/xschemrc .
+cp $PDK_ROOT/sky130A/libs.tech/magic/sky130A.magicrc ./.magicrc
+cp $PDK_ROOT/sky130A/libs.tech/ngspice/spinit  ~/.xschem/simulations/.spiceinit
+```
+
+### optional 
+- Adding ```num_threads=8``` to ```.spiceinit``` 
