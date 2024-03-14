@@ -1,0 +1,184 @@
+#--------------------------------------------------------------
+# CACE circuit characterization file
+#--------------------------------------------------------------
+
+name:		sky130_od_ip__tempsensor
+description:	Temperature Sensor from -30 to 125
+commit:		N/A
+PDK:		sky130A
+
+cace_format:	4.0
+
+authorship {
+	designer:	Or Dicker
+	company:	
+	creation_date:	March 11, 2024
+	license:	Apache 2.0
+}
+
+# Paths to various files
+
+paths {
+	root:		..
+	documentation:	doc
+	schematic:	xschem
+	magic:		mag
+	layout:		gds
+	lvs_netlist:	netlist/lvs
+	rcx_netlist:	netlist/rcx
+	schem_netlist:	netlist/schem
+	testbench:	cace
+	simulation:	ngspice
+	logs:		ngspice/log
+}
+
+# Project dependencies
+
+dependencies {
+}
+
+# Pin names and descriptions
+
+pins {
+	name:		vbe1
+	description:	analog output signal
+	type:		signal
+	direction:	output
+	Vmin:		dvss
+	Vmax:		dvdd
+
+ 	+
+	name:		vbe2
+	description:	analog output signal
+	type:		signal
+	direction:	output
+	Vmin:		dvss
+	Vmax:		dvdd
+
+ 	+
+	name:		vdd
+	description:	Positive analog power supply
+	type:		power
+	direction:	inout
+	Vmin:		1.6
+	Vmax:		2.0
+
+ 	+
+	name:		vss
+	description:	Analog ground
+	type:		ground
+	direction:	inout
+	Vmin:		-0.3
+	Vmax:		0.3
+}
+
+# Default values for electrical parameter measurement conditions
+# if not otherwise specified
+
+default_conditions {
+	name:		vdd
+	description:	Analog power supply voltage
+	display:	vdd
+	unit:		V
+	typical:	1.8
+
+	+
+	name:		vss
+	description:	Analog ground
+	display:	vss
+	unit:		V
+	typical:	0
+
+	+
+	name:		Rout
+	description:	Output load resistance
+	display:	RLoad
+	unit:		M{ohms}
+	typical:	100
+
+	+
+	name:		Cout
+	description:	Output load capacitance
+	display:	CLoad
+	unit:		fF
+	maximum:	100
+
+	+
+	name:		Vcm
+	description:	Common-mode voltage at input
+	display:	Vcm
+	unit:		V
+	typical:	0
+
+	+
+	name:		ena
+	description:	Comparator enable
+	display:	ena
+	typical:	1
+
+	+
+	name:		temperature
+	description:	Ambient temperature
+	display:	Temp
+	unit:		{degrees}C
+	minimum:	-40
+	typical:	27
+	maximum:	130
+
+	+
+	name:		corner
+	description:	Process corner
+	display:	Corner
+	minimum:	ss
+	typical:	tt
+	maximum:	ff
+
+	+
+	name:		iterations
+	description:	Iterations to run
+	display:	Iterations
+	minimum:	1
+	maximum:	10
+	step:		linear
+	stepsize:	1
+}
+
+# List of electrical parameters to be measured and their specified limits
+
+electrical_parameters {
+	name:		Idd_enabled
+	description:	Current draw through analog supply, comparator enabled
+	display:	Idd
+	unit: 		{micro}A
+	spec {
+		minimum:	any
+		typical:	10
+		maximum:	20	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	dccurrent_vdd.spice
+		format:		ascii .data null result
+	}
+	conditions {
+		name: vdd
+		typical: 1.8
+
+		+
+
+		name: vss
+		typical: 0.0
+
+		+
+
+		name: temperature
+		typical: 27
+
+		+
+		name: corner
+		typical: tt
+	}
+
+}
+
+# List of physical parameters to be measured and their specified limits
