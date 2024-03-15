@@ -110,7 +110,7 @@ default_conditions {
 
 	+
 	name:		ena
-	description:	Comparator enable
+	description:	Sensor enable
 	display:	ena
 	typical:	1
 
@@ -168,6 +168,51 @@ electrical_parameters {
 		typical: 0.0
 
 		+
+
+		name: ena
+		typical: 1.8
+		
+		+
+
+		name: temperature
+		typical: 27
+
+		+
+		name: corner
+		typical: tt
+	}
+
+	+
+	name:		Idd_disabled
+	description:	Current draw through analog supply, disabled
+	display:	Idd
+	unit: 		nA
+	spec {
+		minimum:	any
+		typical:	5
+		maximum:	10	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	dccurrent_vdd.spice
+		format:		ascii .data null result
+	}
+	conditions {
+		name: vdd
+		typical: 1.8
+
+		+
+
+		name: vss
+		typical: 0.0
+
+		+
+
+		name: ena
+		typical: 0.0
+		
+		+
+
 
 		name: temperature
 		typical: 27

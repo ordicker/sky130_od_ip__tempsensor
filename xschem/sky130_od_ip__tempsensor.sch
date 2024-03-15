@@ -209,6 +209,18 @@ N -300 -520 -260 -520 {
 lab=Vbe1}
 N -130 -520 -80 -520 {
 lab=Vbe2}
+N -620 -500 -570 -500 {
+lab=ena}
+N -530 -530 -480 -530 {
+lab=vdd}
+N -530 -500 -510 -500 {
+lab=vdd}
+N -510 -530 -510 -500 {
+lab=vdd}
+N -530 -470 -530 -450 {
+lab=xxx}
+N -530 -450 -480 -450 {
+lab=xxx}
 C {sky130_fd_pr/pfet_01v8.sym} -450 -230 0 0 {name=M12
 L=0.15
 W=5
@@ -473,3 +485,20 @@ C {devices/lab_pin.sym} -30 -570 0 1 {name=p12 sig_type=std_logic lab=Vp
 C {devices/opin.sym} -80 -520 0 0 {name=p13 lab=Vbe2}
 C {devices/opin.sym} -300 -520 0 1 {name=p14 lab=Vbe1
 }
+C {sky130_fd_pr/pfet_01v8.sym} -550 -500 0 0 {name=M16
+L=0.15
+W=1
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=pfet_01v8
+spiceprefix=X
+}
+C {devices/ipin.sym} -620 -500 0 0 {name=p15 lab=ena}
+C {devices/lab_pin.sym} -480 -530 0 1 {name=p16 sig_type=std_logic lab=vdd}
+C {devices/lab_pin.sym} -480 -450 0 1 {name=p17 sig_type=std_logic lab=Vp}
