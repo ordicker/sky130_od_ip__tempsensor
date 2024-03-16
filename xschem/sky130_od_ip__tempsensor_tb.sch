@@ -33,7 +33,7 @@ dc temp -40 125 10
 *tran 1m 1000m
 plot V(vbe1) V(vbe2)-V(vbe1) V(vbe1)+10.617*(V(vbe2)-V(vbe1))
 plot T(mu(V(vbe1),V(vbe2)))
-plot 10.617/(10.617+V(vbe1)/(V(vbe2)-V(vbe1)))
+plot T(mu(V(vbe1),V(vbe2)))-\\"temp-sweep\\"
 .endc"}
 C {devices/opin.sym} 190 -50 0 0 {name=p1 lab=vbe2}
 C {devices/gnd.sym} -220 20 0 0 {name=l4 lab=GND}
