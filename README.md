@@ -28,6 +28,9 @@ Based on [design](https://picture.iczhiku.com/resource/ieee/wHKkdSugHJQARbmb.pdf
 | Vbe1 | signal output  | 1.8v domain |
 | Vbe2 | signal output  | 1.8v domain |
 
+## Currently:
+- Vbe1 ~ 400mV-640mV
+- ΔVbe=Vbe2-Vbe1 ~ 25mV-40mV
 
 ## Environment
 ```shell
