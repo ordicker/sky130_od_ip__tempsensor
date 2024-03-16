@@ -112,7 +112,7 @@ default_conditions {
 	name:		ena
 	description:	Sensor enable
 	display:	ena
-	typical:	1
+	typical:	1.8
 
 	+
 	name:		temperature
@@ -175,19 +175,19 @@ electrical_parameters {
 		+
 
 		name: temperature
-		maximum: 125
 		typical: 27
-		minimum: -30
 
 		+
 		name: corner
-		typical: tt
+		minimum:	ss
+		typical:	tt
+		maximum:	ff
 	}
 
 	+
 	name:		Idd_disabled
 	description:	Current draw through analog supply, disabled
-	display:	Idd
+	display:	Idd_disabled
 	unit: 		nA
 	spec {
 		minimum:	any
@@ -215,16 +215,57 @@ electrical_parameters {
 		
 		+
 
-
 		name: temperature
-		maximum: 125
 		typical: 27
-		minimum: -30
-
 
 		+
+		
 		name: corner
-		typical: tt
+		minimum:	ss
+		typical:	tt
+		maximum:	ff
+
+	}
+
+	+	
+	name:		Respose_time
+	description:	Time to reach 90% of the final temperature value
+	display:	Respose_time
+	unit: 		ms
+	spec {
+		minimum:	any
+		typical:	10
+		maximum:	20	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	respose_time.spice
+		format:		ascii .data result
+	}
+	conditions {
+		name: vdd
+		typical: 1.8
+
+		+
+
+		name: vss
+		typical: 0.0
+
+		+
+
+		name: ena
+		typical: 1.8
+		
+		+
+
+		name: temperature
+		typical: 27
+
+		+
+		
+		name: corner
+		typical:	tt
+
 	}
 
 }

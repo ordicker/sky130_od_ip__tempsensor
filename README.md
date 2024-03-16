@@ -31,7 +31,8 @@ Based on [design](https://picture.iczhiku.com/resource/ieee/wHKkdSugHJQARbmb.pdf
 ## Currently:
 - Vbe1 ~ 400mV-640mV
 - ΔVbe=Vbe2-Vbe1 ~ 25mV-40mV
-
+- α = 10.617
+- T = 607.904*μ-205.535 where μ = α/(α+Vbe1/ΔVbe)
 ## Environment
 ```shell
 export PDK_ROOT=/usr/local/share/pdk
@@ -45,4 +46,4 @@ cp $PDK_ROOT/sky130A/libs.tech/ngspice/spinit  ~/.xschem/simulations/.spiceinit
 ```
 
 ### optional 
-- Adding ```num_threads=8``` to ```.spiceinit``` 
+- Adding ```num_threads=8``` to ```.spiceinit```
