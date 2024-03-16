@@ -6,7 +6,6 @@ On the SETUP tab in the CACE test
 ```
 - Add this lines 
 ```
-.param corner=tt
 .param temperature=27
 .param vdd=1.8
 .param vss=0.0

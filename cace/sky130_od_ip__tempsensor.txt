@@ -227,7 +227,8 @@ electrical_parameters {
 
 	}
 
-	+	
+	+
+	
 	name:		Respose_time
 	description:	Time to reach 90% of the final temperature value
 	display:	Respose_time
@@ -265,6 +266,87 @@ electrical_parameters {
 		
 		name: corner
 		typical:	tt
+
+	}
+
+	+
+	
+	name:		Temparature_Accuracy_ALL
+	description:	At all corners -30 to 125
+	display:	Temparature_Accuracy_ALL
+	unit: 		C
+	spec {
+		minimum:	any
+		typical:	any
+		maximum:	5	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	temperature_all.spice
+		format:		ascii .data result
+	}
+	conditions {
+		name: vdd
+		typical: 1.8
+
+		+
+
+		name: vss
+		typical: 0.0
+
+		+
+
+		name: ena
+		typical: 1.8
+		
+		+
+		
+		name: corner
+		typical:	tt
+
+	}
+
+	+
+	
+	name:		Temparature_Accuracy_nominal
+	description:	At 27C
+	display:	Temparature_Accuracy_nominal
+	unit: 		C
+	spec {
+		minimum:	-2	fail
+		typical:	0.5
+		maximum:	2	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	temperature.spice
+		format:		ascii .data result
+	}
+	conditions {
+		name: vdd
+		typical: 1.8
+
+		+
+
+		name: vss
+		typical: 0.0
+
+		+
+
+		name: ena
+		typical: 1.8
+
+		+
+				
+		name: temperature
+		typical: 27
+		
+		+
+		
+		name: corner
+		minimum:	ss
+		typical:	tt
+		maximum:	ff
 
 	}
 
