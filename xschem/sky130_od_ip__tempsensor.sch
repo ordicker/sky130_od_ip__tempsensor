@@ -218,9 +218,9 @@ lab=vdd}
 N -510 -530 -510 -500 {
 lab=vdd}
 N -530 -470 -530 -450 {
-lab=xxx}
+lab=Vp}
 N -530 -450 -480 -450 {
-lab=xxx}
+lab=Vp}
 C {sky130_fd_pr/pfet_01v8.sym} -450 -230 0 0 {name=M12
 L=0.15
 W=5

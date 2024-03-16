@@ -119,9 +119,9 @@ default_conditions {
 	description:	Ambient temperature
 	display:	Temp
 	unit:		{degrees}C
-	minimum:	-40
+	minimum:	-30
 	typical:	27
-	maximum:	130
+	maximum:	125
 
 	+
 	name:		corner
@@ -175,7 +175,9 @@ electrical_parameters {
 		+
 
 		name: temperature
+		maximum: 125
 		typical: 27
+		minimum: -30
 
 		+
 		name: corner
@@ -215,7 +217,10 @@ electrical_parameters {
 
 
 		name: temperature
+		maximum: 125
 		typical: 27
+		minimum: -30
+
 
 		+
 		name: corner
