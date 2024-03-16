@@ -1,2 +1,4 @@
 /.magicrc
 /xschemrc
+/cace/*.spice
+/netlist/
