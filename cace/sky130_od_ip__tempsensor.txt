@@ -298,9 +298,16 @@ electrical_parameters {
 
 		name: ena
 		typical: 1.8
-		
+
 		+
-		
+
+		name: temperature
+		minimum: 0
+		typical: 27
+		maximum: 100
+
+		+
+
 		name: corner
 		minimum:	ss
 		typical:	tt
@@ -311,7 +318,7 @@ electrical_parameters {
 	+
 	
 	name:		Temparature_Accuracy_nominal
-	description:	At 27C
+	description:	Test accuracy At 27C
 	display:	Temparature_Accuracy_nominal
 	unit: 		C
 	spec {
@@ -327,6 +334,52 @@ electrical_parameters {
 	conditions {
 		name: vdd
 		typical: 1.8
+
+		+
+
+		name: vss
+		typical: 0.0
+
+		+
+
+		name: ena
+		typical: 1.8
+
+		+
+				
+		name: temperature
+		typical: 27
+		
+		+
+		
+		name: corner
+		minimum:	ss
+		typical:	tt
+		maximum:	ff
+
+	}
+
+	+
+	
+	name:		Supply_Voltage_Sensitivity
+	description:	supply voltage sensitivity
+	display:	Supply_Voltage_Sensitivity
+	unit: 		%/V
+	spec {
+		minimum:	any
+		typical:	0.01
+		maximum:	0.05	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	supply_sens.spice
+		format:		ascii .data result
+	}
+	conditions {
+		name: vdd
+		minimum: 1.6
+		typical: 1.8
+		maximum: 2.0
 
 		+
 
