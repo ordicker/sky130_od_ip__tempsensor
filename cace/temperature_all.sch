@@ -41,10 +41,10 @@ C {devices/lab_wire.sym} -120 -140 0 1 {name=p24 sig_type=std_logic lab=vss}
 C {devices/lab_wire.sym} 570 -140 0 0 {name=p25 sig_type=std_logic lab=Vbe1}
 C {devices/vsource.sym} -360 -50 0 0 {name=vdd value="DC \{vdd\}" savecurrent=false}
 C {devices/code_shown.sym} -930 -180 0 0 {name=CONTROL only_toplevel=false value=".control
-.func mu(vbe1,vbe2) \{10.617/(10.617+vbe1/(vbe2-vbe1))\}
-.func T(mu) = 607.904*mu-205.535
+.func mu(vbe1,vbe2) = 9.6325/(9.6325+vbe1/(vbe2-vbe1))
+.func T(mu) = 753.402*mu-271.842
 op
-dc temp -40 125 10
+dc temp 0 70 10
 let tmeas = T(mu(V(vbe1),V(vbe2)))
 let terr = abs(tmeas-\\"temp-sweep\\") 
 set wr_singlescale

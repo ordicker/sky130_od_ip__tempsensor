@@ -25,21 +25,21 @@ N -200 -60 -200 -10 {
 lab=#net1}
 N -200 -10 -170 -10 {
 lab=#net1}
-C {devices/code.sym} -190 160 0 0 {name=s1 only_toplevel=false value=".lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice ss"}
+C {devices/code.sym} -190 160 0 0 {name=s1 only_toplevel=false value=".lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt"}
 C {devices/code.sym} 40 160 0 0 {name=s2 only_toplevel=false value="
-.func mu(vbe1,vbe2) \{10.617/(10.617+vbe1/(vbe2-vbe1))\}
-.func T(mu) = 607.904*mu-205.535
+.func mu(vbe1,vbe2) = 9.6325/(9.6325+vbe1/(vbe2-vbe1))
+.func T(mu) = 753.402*mu-271.842
 .control
 option TEMP=25
 op
 let ttrim = T(mu(V(vbe1),V(vbe2)))-25
+*let ttrim=0
 *print ttrim
 
 dc temp -40 125 10
-plot V(vbe1) V(vbe2)-V(vbe1) V(vbe1)+10.617*(V(vbe2)-V(vbe1))
+plot V(vbe1) V(vbe2)-V(vbe1) V(vbe1)+9.6325*(V(vbe2)-V(vbe1))
 plot T(mu(V(vbe1),V(vbe2)))-op1.ttrim
 plot T(mu(V(vbe1),V(vbe2)))-\\"temp-sweep\\"-op1.ttrim
-op
 .endc"}
 C {devices/opin.sym} 190 -50 0 0 {name=p1 lab=vbe2}
 C {devices/gnd.sym} -220 20 0 0 {name=l4 lab=GND}
