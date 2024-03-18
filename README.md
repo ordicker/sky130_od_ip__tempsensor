@@ -29,8 +29,8 @@ Based on [design](https://picture.iczhiku.com/resource/ieee/wHKkdSugHJQARbmb.pdf
 | Vbe2 | signal output  | 1.8v domain |
 
 ## Currently:
-- Vbe1 ~ 400mV-640mV
-- ΔVbe=Vbe2-Vbe1 ~ 25mV-40mV
+- Vbe1 ~ 450mV-650mV
+- ΔVbe=Vbe2-Vbe1 ~ 30mV-50mV
 - α = 9.7783
 - T = 753.402*μ-271.842 where μ = α/(α+Vbe1/ΔVbe)
 ## Environment
