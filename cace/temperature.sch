@@ -5,7 +5,7 @@ K {}
 V {}
 S {}
 E {}
-T {CACE testbench Temparature Accuracy/Resolution} -310 -550 0 0 0.6 0.6 {}
+T {CACE testbench Temparature Accuracy at nominal Temperature} -310 -550 0 0 0.6 0.6 {}
 T {Drawn by Or Dicker
 March 14, 2024
 Revision 0
@@ -58,7 +58,7 @@ C {devices/code_shown.sym} -940 -430 0 0 {name=SETUP only_toplevel=false value="
 
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice \{corner\}
 
-*.option TEMP=\{temperature\}
+.option TEMP=\{temperature\}
 * Flag unsafe operating conditions (exceeds models' specified limits)
 .option warn=1
 "}
