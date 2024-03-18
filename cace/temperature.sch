@@ -43,9 +43,15 @@ C {devices/vsource.sym} -360 -50 0 0 {name=vdd value="DC \{vdd\}" savecurrent=fa
 C {devices/code_shown.sym} -930 -180 0 0 {name=CONTROL only_toplevel=false value=".control
 .func mu(vbe1,vbe2) = 9.6325/(9.6325+vbe1/(vbe2-vbe1))
 .func T(mu) = 753.402*mu-271.842
+option TEMP=25
+op
+let ttrim = T(mu(V(vbe1),V(vbe2)))-25
+print ttrim
+
+option TEMP=\{temperature\}
 op
 let tmeas = T(mu(V(vbe1),V(vbe2)))
-let terr = tmeas-\{temperature\}
+let terr = tmeas-\{temperature\}-op1.ttrim
 set wr_singlescale
 echo $&terr > \{simpath\}/\{filename\}_\{N\}.data
 quit

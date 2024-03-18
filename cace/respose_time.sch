@@ -46,8 +46,7 @@ C {devices/code_shown.sym} -940 -130 0 0 {name=CONTROL only_toplevel=false value
 .func T(mu) = 753.402*mu-271.842
 tran 100n 1m
 let tmeas = T(mu(V(Vbe1),V(Vbe2)))
-meas tran tres when tmeas=0.9*\{temperature\} CROSS=LAST
-
+meas tran tres when tmeas=\{temperature\}*0.9 CROSS=LAST
 set wr_singlescale
 echo $&tres > \{simpath\}/\{filename\}_\{N\}.data
 quit
