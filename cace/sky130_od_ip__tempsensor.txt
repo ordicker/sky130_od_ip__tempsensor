@@ -38,22 +38,6 @@ dependencies {
 # Pin names and descriptions
 
 pins {
-	name:		vbe1
-	description:	analog output signal
-	type:		signal
-	direction:	output
-	Vmin:		dvss
-	Vmax:		dvdd
-
- 	+
-	name:		vbe2
-	description:	analog output signal
-	type:		signal
-	direction:	output
-	Vmin:		dvss
-	Vmax:		dvdd
-
- 	+
 	name:		vdd
 	description:	Positive analog power supply
 	type:		power
@@ -68,6 +52,34 @@ pins {
 	direction:	inout
 	Vmin:		-0.3
 	Vmax:		0.3
+
+	+
+	
+	name:		ena
+	description:	Enable signal (1.8 on) 
+	type:		signal
+	direction:	output
+	Vmin:		vss
+	Vmax:		vdd
+
+	+
+	
+	name:		vbe1
+	description:	Analog output signal
+	type:		signal
+	direction:	output
+	Vmin:		vss
+	Vmax:		vdd
+
+ 	+
+	
+	name:		vbe2
+	description:	Analog output signal
+	type:		signal
+	direction:	output
+	Vmin:		vss
+	Vmax:		vdd
+
 }
 
 # Default values for electrical parameter measurement conditions
@@ -99,7 +111,7 @@ default_conditions {
 	description:	Output load capacitance
 	display:	CLoad
 	unit:		fF
-	maximum:	100
+	maximum:	120
 
 	+
 	name:		Vcm
@@ -298,13 +310,6 @@ electrical_parameters {
 
 		name: ena
 		typical: 1.8
-
-		+
-
-		name: temperature
-		minimum: 0
-		typical: 27
-		maximum: 100
 
 		+
 

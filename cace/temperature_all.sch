@@ -46,7 +46,7 @@ C {devices/code_shown.sym} -930 -180 0 0 {name=CONTROL only_toplevel=false value
 option TEMP=25
 op
 let ttrim = T(mu(V(vbe1),V(vbe2)))-25
-dc temp 0 70 10
+dc temp -30 120 10
 let tmeas = T(mu(V(vbe1),V(vbe2)))
 let terr = abs(tmeas-\\"temp-sweep\\"-op1.ttrim) 
 set wr_singlescale

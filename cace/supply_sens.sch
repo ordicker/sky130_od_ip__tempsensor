@@ -70,7 +70,6 @@ C {devices/code_shown.sym} -940 -200 0 0 {name=CONTROL only_toplevel=false value
 option TEMP=25
 op
 let ttrim = T(mu(V(vbe1),V(vbe2)))-25
-print ttrim
 
 option TEMP=\{temperature\}
 op

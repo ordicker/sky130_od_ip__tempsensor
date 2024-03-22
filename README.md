@@ -20,10 +20,8 @@ Based on [design](https://picture.iczhiku.com/resource/ieee/wHKkdSugHJQARbmb.pdf
 
 | name | use            |             |
 |:-----|:---------------|:------------|
-| avdd | analog power   | 3.3v        |
-| dvdd | digital power  | 1.8v        |
-| avss | analog ground  |             |
-| dvss | digital ground |             |
+| vdd  | digital power  | 1.8v        |
+| vss  | digital ground | 0.0v        |
 | ena  | enable         | 1.8v domain |
 | Vbe1 | signal output  | 1.8v domain |
 | Vbe2 | signal output  | 1.8v domain |
