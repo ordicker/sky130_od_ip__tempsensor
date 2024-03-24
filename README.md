@@ -29,8 +29,8 @@ Based on [design](https://picture.iczhiku.com/resource/ieee/wHKkdSugHJQARbmb.pdf
 ## Currently:
 - Vbe1 ~ 450mV-650mV
 - ΔVbe=Vbe2-Vbe1 ~ 30mV-50mV
-- α = 9.7783
-- T = 753.402*μ-271.842 where μ = α/(α+Vbe1/ΔVbe)
+- α = 9.326
+- T = 771.323*μ-267.772 where μ = α/(α+Vbe1/ΔVbe)
 ## Environment
 ```shell
 export PDK_ROOT=/usr/local/share/pdk
