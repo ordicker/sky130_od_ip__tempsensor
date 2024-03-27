@@ -42,8 +42,8 @@ C {devices/lab_wire.sym} 660 -140 0 0 {name=p25 sig_type=std_logic lab=Vbe1}
 C {devices/vsource.sym} -270 -50 0 0 {name=vdd value="DC \{vdd\}" savecurrent=false}
 C {devices/code_shown.sym} -940 -130 0 0 {name=CONTROL only_toplevel=false value=".control
 * Step function applied at time 100ns, measure respose_time
-.func mu(vbe1,vbe2) = 9.326/(9.326+vbe1/(vbe2-vbe1))
-.func T(mu) = 771.323*mu-267.772
+.func mu(vbe1,vbe2) = 8.56/(8.56+vbe1/(vbe2-vbe1))
+.func T(mu) = 802.143*mu-255.537
 tran 100n 1m
 let tmeas = T(mu(V(Vbe1),V(Vbe2)))
 meas tran tres when tmeas=\{temperature\}*0.9 CROSS=LAST

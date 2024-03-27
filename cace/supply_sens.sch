@@ -65,8 +65,8 @@ C {devices/lab_wire.sym} -120 -140 0 1 {name=p24 sig_type=std_logic lab=vss}
 C {devices/lab_wire.sym} 570 -140 0 0 {name=p25 sig_type=std_logic lab=Vbe1}
 C {devices/vsource.sym} -360 -50 0 0 {name=vdd value="DC \{vdd\}" savecurrent=false}
 C {devices/code_shown.sym} -940 -200 0 0 {name=CONTROL only_toplevel=false value=".control
-.func mu(vbe1,vbe2) = 9.326/(9.326+vbe1/(vbe2-vbe1))
-.func T(mu) = 771.323*mu-267.772
+.func mu(vbe1,vbe2) = 8.56/(8.56+vbe1/(vbe2-vbe1))
+.func T(mu) = 802.143*mu-255.537
 option TEMP=25
 op
 let ttrim = T(mu(V(vbe1),V(vbe2)))-25
