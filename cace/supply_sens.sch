@@ -10,61 +10,25 @@ March 18, 2024
 Revision 0
 Open sourced under Apache 2.0 license} -920 160 0 0 0.4 0.4 {}
 T {CACE testbench Supply Voltage Sensetivity} -310 -550 0 0 0.6 0.6 {}
-N -380 -20 -330 -20 {
+N -290 -20 -110 -20 {
 lab=VSUB}
-N -120 -160 -20 -160 {
-lab=vdd}
-N -120 -140 -20 -140 {
-lab=vss}
-N 280 -140 570 -140 {
-lab=Vbe1}
-N -330 -20 -200 -20 {
-lab=VSUB}
-N -360 -160 -360 -80 {
-lab=vdd}
-N -360 -160 -120 -160 {
-lab=vdd}
-N -280 -140 -280 -80 {
-lab=vss}
-N -280 -140 -120 -140 {
-lab=vss}
-N -200 -120 -200 -80 {
+N -270 -160 -270 -80 {
 lab=#net1}
-N -200 -120 -20 -120 {
+N -270 -160 -20 -160 {
 lab=#net1}
-N 280 -160 570 -160 {
+N -190 -140 -190 -80 {
+lab=#net2}
+N -190 -140 -20 -140 {
+lab=#net2}
+N -110 -120 -110 -80 {
+lab=#net3}
+N -110 -120 -20 -120 {
+lab=#net3}
+N 280 -160 360 -160 {
 lab=Vbe2}
-N -380 -20 -330 -20 {
-lab=VSUB}
-N -120 -160 -20 -160 {
-lab=vdd}
-N -120 -140 -20 -140 {
-lab=vss}
-N 280 -140 570 -140 {
+N 280 -140 360 -140 {
 lab=Vbe1}
-N -330 -20 -200 -20 {
-lab=VSUB}
-N -360 -160 -360 -80 {
-lab=vdd}
-N -360 -160 -120 -160 {
-lab=vdd}
-N -280 -140 -280 -80 {
-lab=vss}
-N -280 -140 -120 -140 {
-lab=vss}
-N -200 -120 -200 -80 {
-lab=#net1}
-N -200 -120 -20 -120 {
-lab=#net1}
-N 280 -160 570 -160 {
-lab=Vbe2}
-C {devices/lab_pin.sym} -380 -20 0 0 {name=p1 sig_type=std_logic lab=VSUB}
-C {devices/vsource.sym} -280 -50 0 0 {name=vss value="DC \{vss\}" savecurrent=false}
-C {devices/lab_wire.sym} -120 -160 0 1 {name=p11 sig_type=std_logic lab=vdd}
-C {devices/lab_wire.sym} -120 -140 0 1 {name=p24 sig_type=std_logic lab=vss}
-C {devices/lab_wire.sym} 570 -140 0 0 {name=p25 sig_type=std_logic lab=Vbe1}
-C {devices/vsource.sym} -360 -50 0 0 {name=vdd value="DC \{vdd\}" savecurrent=false}
-C {devices/code_shown.sym} -940 -200 0 0 {name=CONTROL only_toplevel=false value=".control
+C {devices/code_shown.sym} -940 -140 0 0 {name=CONTROL only_toplevel=false value=".control
 .func mu(vbe1,vbe2) = 8.56/(8.56+vbe1/(vbe2-vbe1))
 .func T(mu) = 802.143*mu-255.537
 option TEMP=25
@@ -80,7 +44,7 @@ echo $&terr > \{simpath\}/\{filename\}_\{N\}.data
 quit
 .endc
 "}
-C {devices/code_shown.sym} -940 -450 0 0 {name=SETUP only_toplevel=false value="* CACE gensim simulation file \{filename\}_\{N\}
+C {devices/code_shown.sym} -940 -530 0 0 {name=SETUP only_toplevel=false value="* CACE gensim simulation file \{filename\}_\{N\}
 *Find the current through the temperature sensor 
 
 .include \{DUT_path\}
@@ -91,23 +55,14 @@ C {devices/code_shown.sym} -940 -450 0 0 {name=SETUP only_toplevel=false value="
 * Flag unsafe operating conditions (exceeds models' specified limits)
 .option warn=1
 "}
-C {devices/res.sym} -330 10 0 0 {name=RSUB
+C {devices/lab_pin.sym} -290 -20 0 0 {name=p3 sig_type=std_logic lab=VSUB}
+C {devices/vsource.sym} -190 -50 0 0 {name=vss1 value="DC \{vss\}" savecurrent=false}
+C {devices/lab_wire.sym} 360 -140 0 0 {name=p6 sig_type=std_logic lab=Vbe1}
+C {devices/vsource.sym} -270 -50 0 0 {name=vdd1 value="DC \{vdd\}" savecurrent=false}
+C {devices/res.sym} -240 10 0 0 {name=RSUB1
 value=0.01
 device=resistor}
-C {devices/gnd.sym} -330 40 0 0 {name=l1 lab=GND}
-C {xschem/sky130_od_ip__tempsensor.sym} 130 -140 0 0 {name=x1}
-C {devices/lab_wire.sym} 570 -160 0 0 {name=p2 sig_type=std_logic lab=Vbe2}
-C {devices/vsource.sym} -200 -50 0 0 {name=Vena value="DC \{ena\}" savecurrent=false}
-C {devices/lab_pin.sym} -380 -20 0 0 {name=p3 sig_type=std_logic lab=VSUB}
-C {devices/vsource.sym} -280 -50 0 0 {name=vss1 value="DC \{vss\}" savecurrent=false}
-C {devices/lab_wire.sym} -120 -160 0 1 {name=p4 sig_type=std_logic lab=vdd}
-C {devices/lab_wire.sym} -120 -140 0 1 {name=p5 sig_type=std_logic lab=vss}
-C {devices/lab_wire.sym} 570 -140 0 0 {name=p6 sig_type=std_logic lab=Vbe1}
-C {devices/vsource.sym} -360 -50 0 0 {name=vdd1 value="DC \{vdd\}" savecurrent=false}
-C {devices/res.sym} -330 10 0 0 {name=RSUB1
-value=0.01
-device=resistor}
-C {devices/gnd.sym} -330 40 0 0 {name=l2 lab=GND}
+C {devices/gnd.sym} -240 40 0 0 {name=l2 lab=GND}
 C {xschem/sky130_od_ip__tempsensor.sym} 130 -140 0 0 {name=x2}
-C {devices/lab_wire.sym} 570 -160 0 0 {name=p7 sig_type=std_logic lab=Vbe2}
-C {devices/vsource.sym} -200 -50 0 0 {name=Vena1 value="DC \{ena\}" savecurrent=false}
+C {devices/lab_wire.sym} 360 -160 0 0 {name=p7 sig_type=std_logic lab=Vbe2}
+C {devices/vsource.sym} -110 -50 0 0 {name=Vena1 value="DC \{ena\}" savecurrent=false}
