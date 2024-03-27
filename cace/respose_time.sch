@@ -44,10 +44,11 @@ C {devices/code_shown.sym} -940 -130 0 0 {name=CONTROL only_toplevel=false value
 * Step function applied at time 100ns, measure respose_time
 .func mu(vbe1,vbe2) = 8.56/(8.56+vbe1/(vbe2-vbe1))
 .func T(mu) = 802.143*mu-255.537
-tran 100n 1m
-let tmeas = T(mu(V(Vbe1),V(Vbe2)))
-meas tran tres when tmeas=\{temperature\}*0.9 CROSS=LAST
+tran 1u 10m
+let tmeas = abs(T(mu(V(Vbe1),V(Vbe2)))-\{temperature\})
+meas tran tres when tmeas=\{temperature\}*0.1 CROSS=LAST
 set wr_singlescale
+*plot 802.143*(8.56/(8.56+Vbe1/(Vbe2-Vbe1)))-255.537
 echo $&tres > \{simpath\}/\{filename\}_\{N\}.data
 quit
 .endc
