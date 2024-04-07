@@ -34,16 +34,16 @@ end
 
 function trasistor_mode(tras)
     if tras["type"]=="nfet"
-        if tras["vgs"]<tras["vth"] return "Cutoff" end
-        if tras["vds"]<(tras["vgs"]-tras["vth"])
+        if tras["vgs"]<=tras["vth"] return "Cutoff" end
+        if tras["vds"]>=(tras["vgs"]-tras["vth"])
             return "Saturation"
         else
             return "linear!"
         end
     end
     if tras["type"]=="pfet"
-        if tras["vgs"]>tras["vth"] return "Cutoff" end
-        if tras["vds"]>(tras["vgs"]-tras["vth"])
+        if tras["vgs"]>=tras["vth"] return "Cutoff" end
+        if tras["vds"]<=(tras["vgs"]-tras["vth"])
             return "Saturation"
         else
             return "linear!"
@@ -52,4 +52,8 @@ function trasistor_mode(tras)
     end
 end
 
-mode(tras) = println("name = ",tras["name"], " mode = ", trasistor_mode(tras))
+mode(tras) = println(
+    rpad(tras["type"],5),"|", rpad(tras["name"],7),"|",
+    rpad(trasistor_mode(tras),12),
+    "| |vgs-vth| = ", rpad(abs(tras["vgs"]-tras["vth"]),23),
+    "| vds = ",rpad(abs(tras["vds"]),20), " |", tras["vth"])
