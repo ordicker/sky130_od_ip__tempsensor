@@ -16,7 +16,7 @@ function parse(filename)
             tras = Dict() # new device 
             tras["name"] = m.captures[1]
             tras["type"] = m.captures[2]
-            while true # do while
+            while !eof(file)
                 line = readline(file)
                 m = match(param_str ,line)
                 if m!=nothing
@@ -25,10 +25,31 @@ function parse(filename)
                 end
                 if match(device_str ,line)!=nothing break end
             end
-            skip(file,-1) #backone line
+            skip(file,-length(line))
             push!(trasistors,tras)
         end
     end
-    trasistors
+    return trasistors
 end
 
+function trasistor_mode(tras)
+    if tras["type"]=="nfet"
+        if tras["vgs"]<tras["vth"] return "Cutoff" end
+        if tras["vds"]<(tras["vgs"]-tras["vth"])
+            return "Saturation"
+        else
+            return "linear!"
+        end
+    end
+    if tras["type"]=="pfet"
+        if tras["vgs"]>tras["vth"] return "Cutoff" end
+        if tras["vds"]>(tras["vgs"]-tras["vth"])
+            return "Saturation"
+        else
+            return "linear!"
+        end
+        
+    end
+end
+
+mode(tras) = println("name = ",tras["name"], " mode = ", trasistor_mode(tras))
