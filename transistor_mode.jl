@@ -10,7 +10,7 @@ function parse(filename)
             # find nfet and pfet
             device_str = r"model.*=.*\.(.*):.*([n|p]fet).*"
             # find vgs, vds, vth, id
-            param_str = r"(vgs|vds|vth|id)[ ]*=(.*)"
+            param_str = r"(vgs|vds|vth|id|vdsat)[ ]*=(.*)"
             m = match(device_str ,line)
             if m==nothing continue end
             tras = Dict() # new device 
@@ -35,15 +35,15 @@ end
 function trasistor_mode(tras)
     if tras["type"]=="nfet"
         if tras["vgs"]<=tras["vth"] return "Cutoff" end
-        if tras["vds"]>=(tras["vgs"]-tras["vth"])
+        if tras["vds"]>=tras["vdsat"]
             return "Saturation"
         else
             return "linear!"
         end
     end
     if tras["type"]=="pfet"
-        if tras["vgs"]>=tras["vth"] return "Cutoff" end
-        if tras["vds"]<=(tras["vgs"]-tras["vth"])
+        if abs(tras["vgs"])<=abs(tras["vth"]) return "Cutoff" end
+        if abs(tras["vds"])>=abs(tras["vdsat"])
             return "Saturation"
         else
             return "linear!"
@@ -56,4 +56,9 @@ mode(tras) = println(
     rpad(tras["type"],5),"|", rpad(tras["name"],7),"|",
     rpad(trasistor_mode(tras),12),
     "| |vgs-vth| = ", rpad(abs(tras["vgs"]-tras["vth"]),23),
-    "| vds = ",rpad(abs(tras["vds"]),20), " |", tras["vth"])
+    "| vgs = ", rpad(tras["vgs"],17),
+    "| vth = ", rpad(tras["vth"],17),
+    "| vdsat = ", rpad(tras["vdsat"],17),
+    "| vds = ",rpad(abs(tras["vds"]),17),
+    "| id = ",rpad(abs(tras["id"]),17)
+)
