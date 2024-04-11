@@ -29,60 +29,44 @@ N -430 -200 -430 -90 {
 lab=#net1}
 N -640 -200 -640 -180 {
 lab=#net2}
-N -600 -60 -540 -60 {
-lab=vss}
-N -480 -60 -470 -60 {
-lab=#net3}
-N -550 -60 -550 -20 {
-lab=vss}
 N -640 -180 -640 -170 {
 lab=#net2}
 N -640 -110 -640 -90 {
-lab=#net4}
+lab=#net3}
 N -430 -260 -280 -260 {
 lab=vdd}
 N -270 -180 -120 -180 {
-lab=#net5}
+lab=#net4}
 N -220 -200 -220 -180 {
-lab=#net5}
-N -430 -150 -370 -150 {
-lab=#net1}
-N -640 -190 -140 -190 {
-lab=#net2}
-N -80 -190 -80 -150 {
-lab=#net2}
+lab=#net4}
 N -280 -260 -220 -260 {
 lab=vdd}
-N -140 -190 -80 -190 {
-lab=#net2}
-N -370 -150 -310 -150 {
-lab=#net1}
 N -430 -20 -120 -20 {
 lab=vss}
 N -120 -120 -120 -80 {
-lab=#net6}
+lab=#net5}
 N -270 -120 -270 -80 {
-lab=#net7}
+lab=#net6}
 N -220 -260 120 -260 {
 lab=vdd}
 N -120 -20 120 -20 {
 lab=vss}
 N 120 -200 120 -180 {
-lab=#net8}
+lab=#net7}
 N 120 -120 120 -80 {
-lab=#net9}
+lab=#net8}
 N 30 -150 80 -150 {
-lab=#net8}
+lab=#net7}
 N 60 -190 120 -190 {
-lab=#net8}
+lab=#net7}
 N 60 -190 60 -150 {
-lab=#net8}
+lab=#net7}
 N 80 -100 80 -50 {
-lab=#net9}
+lab=#net8}
 N 80 -100 120 -100 {
-lab=#net9}
+lab=#net8}
 N -10 -120 -10 -80 {
-lab=#net10}
+lab=#net9}
 N -10 -200 -10 -180 {
 lab=Vp}
 N -10 -190 50 -190 {
@@ -202,37 +186,47 @@ lab=Vp}
 N -530 -450 -480 -450 {
 lab=Vp}
 N -270 -150 -260 -150 {
-lab=#net5}
+lab=#net4}
 N -260 -180 -260 -150 {
-lab=#net5}
+lab=#net4}
 N -130 -150 -120 -150 {
-lab=#net5}
+lab=#net4}
 N -130 -180 -130 -150 {
-lab=#net5}
+lab=#net4}
 N -20 -150 -10 -150 {
-lab=#net10}
+lab=#net9}
 N -20 -150 -20 -120 {
-lab=#net10}
+lab=#net9}
 N -20 -120 -10 -120 {
-lab=#net10}
+lab=#net9}
 N 120 -150 130 -150 {
-lab=#net9}
+lab=#net8}
 N 130 -150 130 -120 {
-lab=#net9}
+lab=#net8}
 N 120 -120 130 -120 {
-lab=#net9}
+lab=#net8}
 N -230 -90 -230 -50 {
-lab=#net7}
+lab=#net6}
 N -270 -90 -230 -90 {
-lab=#net7}
+lab=#net6}
 N -160 -90 -160 -50 {
-lab=#net6}
+lab=#net5}
 N -160 -90 -120 -90 {
-lab=#net6}
+lab=#net5}
 N -120 -90 -50 -90 {
-lab=#net6}
+lab=#net5}
 N -50 -90 -50 -50 {
-lab=#net6}
+lab=#net5}
+N -430 -150 -310 -150 {
+lab=#net1}
+N -640 -190 -80 -190 {
+lab=#net2}
+N -80 -190 -80 -150 {
+lab=#net2}
+N -530 -60 -530 -20 {
+lab=vss}
+N -600 -60 -530 -60 {
+lab=vss}
 C {sky130_fd_pr/pfet_01v8.sym} -450 -230 0 0 {name=M12
 L=5.0
 W=1
@@ -275,16 +269,6 @@ model=pnp_05v5_W3p40L3p40
 m=1
 spiceprefix=X
 }
-C {devices/res.sym} -640 -140 0 0 {name=Rb
-value=5k
-footprint=1206
-device=resistor
-m=1}
-C {devices/res.sym} -510 -60 1 0 {name=Rb_5
-value=1k
-footprint=1206
-device=resistor
-m=1}
 C {devices/ipin.sym} -630 -610 0 0 {name=p3 lab=vss
 }
 C {devices/lab_pin.sym} -550 0 0 0 {name=p4 sig_type=std_logic lab=vss
@@ -508,3 +492,13 @@ spiceprefix=X
 C {devices/ipin.sym} -620 -500 0 0 {name=p15 lab=ena}
 C {devices/lab_pin.sym} -480 -530 0 1 {name=p16 sig_type=std_logic lab=vdd}
 C {devices/lab_pin.sym} -480 -450 0 1 {name=p17 sig_type=std_logic lab=Vp}
+C {sky130_fd_pr/res_generic_l1.sym} -640 -140 0 0 {name=R1
+W=1
+L=1000
+model=res_generic_l1
+mult=1}
+C {sky130_fd_pr/res_generic_l1.sym} -500 -60 1 1 {name=R2
+W=1
+L=200
+model=res_generic_l1
+mult=1}
