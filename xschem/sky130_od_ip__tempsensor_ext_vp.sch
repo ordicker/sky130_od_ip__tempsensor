@@ -256,8 +256,6 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {devices/lab_pin.sym} 325 -350 0 0 {name=p6 sig_type=std_logic lab=vdd}
-C {devices/lab_pin.sym} 275 -110 0 0 {name=p7 sig_type=std_logic lab=ena
-}
 C {devices/lab_pin.sym} 215 -180 0 0 {name=p8 sig_type=std_logic lab=vbg
 }
 C {devices/lab_pin.sym} 575 -230 0 1 {name=p9 sig_type=std_logic lab=vp
