@@ -73,7 +73,7 @@ lab=vdd}
 N 350 -300 360 -300 {
 lab=vdd}
 C {sky130_fd_pr/nfet_01v8.sym} 130 -210 0 0 {name=M1
-L=1
+L=10
 W=1
 nf=1 
 mult=1
@@ -87,7 +87,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 370 -210 0 1 {name=M2
-L=1
+L=10
 W=1
 nf=1 
 mult=1
@@ -126,7 +126,7 @@ C {devices/ipin.sym} 50 -250 0 0 {name=p7 lab=vbias
 }
 C {devices/lab_pin.sym} 180 -120 0 0 {name=p8 sig_type=std_logic lab=vbias}
 C {sky130_fd_pr/pfet_01v8_lvt.sym} 330 -300 0 0 {name=M4
-L=1
+L=10
 W=1
 nf=1
 mult=1
@@ -140,7 +140,7 @@ model=pfet_01v8_lvt
 spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8_lvt.sym} 170 -300 0 1 {name=M3
-L=1
+L=10
 W=1
 nf=1
 mult=1

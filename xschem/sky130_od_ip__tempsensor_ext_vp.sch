@@ -169,7 +169,7 @@ C {devices/ipin.sym} 50 -220 0 0 {name=p2 lab=vbg
 }
 C {sky130_fd_pr/pfet3_01v8_lvt.sym} 900 -250 0 1 {name=M1
 L=1
-W=5
+W=1
 body=VDD
 nf=1
 mult=1
@@ -184,7 +184,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet3_01v8_lvt.sym} 990 -250 0 0 {name=M2
 L=1
-W=5
+W=1
 body=VDD
 nf=1
 mult=5
@@ -199,7 +199,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 265 -180 0 0 {name=M4
 L=1
-W=10
+W=1
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -213,7 +213,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 475 -180 0 1 {name=M5
 L=1
-W=10
+W=1
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
