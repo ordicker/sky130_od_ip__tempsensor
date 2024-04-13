@@ -23,6 +23,7 @@ New design in xschem/sky130_od_ip__tempsensor_ext_vp.sch with external V ref (fr
 |:-----|:---------------|:------------|
 | vdd  | digital power  | 1.8v        |
 | vss  | digital ground | 0.0v        |
+| vbg  | V bandgap      | 1.2v        |
 | ena  | enable         | 1.8v domain |
 | Vbe1 | signal output  | 1.8v domain |
 | Vbe2 | signal output  | 1.8v domain |
