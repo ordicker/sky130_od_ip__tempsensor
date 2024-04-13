@@ -19,7 +19,7 @@ lab=#net2}
 N -190 -140 -20 -140 {
 lab=#net2}
 N 280 -160 360 -160 {
-lab=Vbe2}
+lab=Vbe1}
 N 280 -140 360 -140 {
 lab=Vbe1}
 N -290 -20 -40 -20 {
@@ -61,13 +61,13 @@ C {devices/code_shown.sym} -940 -530 0 0 {name=SETUP only_toplevel=false value="
 "}
 C {devices/lab_pin.sym} -290 -20 0 0 {name=p3 sig_type=std_logic lab=VSUB}
 C {devices/vsource.sym} -190 -50 0 0 {name=vss1 value="DC \{vss\}" savecurrent=false}
-C {devices/lab_wire.sym} 360 -140 0 0 {name=p6 sig_type=std_logic lab=Vbe1}
+C {devices/lab_wire.sym} 360 -140 0 0 {name=p6 sig_type=std_logic lab=Vbe2}
 C {devices/vsource.sym} -270 -50 0 0 {name=vdd1 value="DC \{vdd\}" savecurrent=false}
 C {devices/res.sym} -240 10 0 0 {name=RSUB1
 value=0.01
 device=resistor}
 C {devices/gnd.sym} -240 40 0 0 {name=l2 lab=GND}
-C {devices/lab_wire.sym} 360 -160 0 0 {name=p7 sig_type=std_logic lab=Vbe2}
+C {devices/lab_wire.sym} 360 -160 0 0 {name=p7 sig_type=std_logic lab=Vbe1}
 C {devices/vsource.sym} -40 -50 0 0 {name=Vena1 value="DC \{ena\}" savecurrent=false}
 C {xschem/sky130_od_ip__tempsensor_ext_vp.sym} 130 -130 0 0 {name=x1}
 C {devices/vsource.sym} -110 -50 0 0 {name=vbandgap value="DC 1.2" savecurrent=false}

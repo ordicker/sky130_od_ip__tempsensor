@@ -19,7 +19,7 @@ lab=vss}
 N 370 -140 660 -140 {
 lab=Vbe1}
 N 370 -160 660 -160 {
-lab=Vbe2}
+lab=Vbe1}
 N -270 -160 -270 -80 {
 lab=vdd}
 N -270 -160 -30 -160 {
@@ -34,13 +34,15 @@ N -20 -100 -20 -80 {
 lab=#net1}
 N -20 -100 70 -100 {
 lab=#net1}
-N -110 -120 -110 -80 {}
-N -110 -120 70 -120 {}
+N -110 -120 -110 -80 {
+lab=#net2}
+N -110 -120 70 -120 {
+lab=#net2}
 C {devices/lab_pin.sym} -290 -20 0 0 {name=p1 sig_type=std_logic lab=VSUB}
 C {devices/vsource.sym} -190 -50 0 0 {name=vss value="DC \{vss\}" savecurrent=false}
 C {devices/lab_wire.sym} -30 -160 0 1 {name=p11 sig_type=std_logic lab=vdd}
 C {devices/lab_wire.sym} -30 -140 0 1 {name=p24 sig_type=std_logic lab=vss}
-C {devices/lab_wire.sym} 660 -140 0 0 {name=p25 sig_type=std_logic lab=Vbe1}
+C {devices/lab_wire.sym} 660 -140 0 0 {name=p25 sig_type=std_logic lab=Vbe2}
 C {devices/vsource.sym} -270 -50 0 0 {name=vdd value="DC \{vdd\}" savecurrent=false}
 C {devices/code_shown.sym} -940 -130 0 0 {name=CONTROL only_toplevel=false value=".control
 * Step function applied at time 100ns, measure respose_time
@@ -71,7 +73,7 @@ C {devices/res.sym} -240 10 0 0 {name=RSUB
 value=0.01
 device=resistor}
 C {devices/gnd.sym} -240 40 0 0 {name=l1 lab=GND}
-C {devices/lab_wire.sym} 660 -160 0 0 {name=p2 sig_type=std_logic lab=Vbe2}
+C {devices/lab_wire.sym} 660 -160 0 0 {name=p2 sig_type=std_logic lab=Vbe1}
 C {devices/vsource.sym} -20 -50 0 0 {name=VVdiff value="DC 0 PWL(0 0 100n 0 100.1n \{ena\})" savecurrent=false}
 C {xschem/sky130_od_ip__tempsensor_ext_vp.sym} 220 -130 0 0 {name=x1}
 C {devices/vsource.sym} -110 -50 0 0 {name=vbandgap value="DC 1.2" savecurrent=false}
