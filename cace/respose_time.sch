@@ -17,7 +17,7 @@ lab=vdd}
 N -30 -140 70 -140 {
 lab=vss}
 N 370 -140 660 -140 {
-lab=Vbe1}
+lab=Vbe2}
 N 370 -160 660 -160 {
 lab=Vbe1}
 N -270 -160 -270 -80 {
@@ -76,4 +76,4 @@ C {devices/gnd.sym} -240 40 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} 660 -160 0 0 {name=p2 sig_type=std_logic lab=Vbe1}
 C {devices/vsource.sym} -20 -50 0 0 {name=VVdiff value="DC 0 PWL(0 0 100n 0 100.1n \{ena\})" savecurrent=false}
 C {xschem/sky130_od_ip__tempsensor_ext_vp.sym} 220 -130 0 0 {name=x1}
-C {devices/vsource.sym} -110 -50 0 0 {name=vbandgap value="DC 1.2" savecurrent=false}
+C {devices/vsource.sym} -110 -50 0 0 {name=vbandgap value="DC \{vbg\}" savecurrent=false}

@@ -27,7 +27,7 @@ lab=vss}
 N -280 -140 -120 -140 {
 lab=vss}
 N 280 -160 570 -160 {
-lab=Vbe3}
+lab=Vbe1}
 N -330 -20 -60 -20 {
 lab=VSUB}
 N -60 -100 -60 -80 {
@@ -79,4 +79,4 @@ C {devices/gnd.sym} -330 40 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} 570 -160 0 0 {name=p2 sig_type=std_logic lab=Vbe1}
 C {devices/vsource.sym} -60 -50 0 0 {name=Vena value="DC \{ena\}" savecurrent=false}
 C {xschem/sky130_od_ip__tempsensor_ext_vp.sym} 130 -130 0 0 {name=x1}
-C {devices/vsource.sym} -180 -50 0 0 {name=vbandgap value="DC 1.2" savecurrent=false}
+C {devices/vsource.sym} -180 -50 0 0 {name=vbandgap value="DC \{vbg\}" savecurrent=false}
