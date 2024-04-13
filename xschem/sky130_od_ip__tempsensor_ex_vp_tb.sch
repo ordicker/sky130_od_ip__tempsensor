@@ -29,9 +29,9 @@ N -100 -280 -100 -270 {
 lab=GND}
 N -100 -340 310 -340 {
 lab=#net2}
-N 265 -280 310 -280 {
+N 280 -280 310 -280 {
 lab=#net2}
-N 265 -340 265 -280 {
+N 280 -340 280 -280 {
 lab=#net2}
 C {devices/code.sym} 110 -130 0 0 {name=s1 only_toplevel=false value=".lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt"}
 C {devices/opin.sym} 660 -340 0 0 {name=p1 lab=vbe1}

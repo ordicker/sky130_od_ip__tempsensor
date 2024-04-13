@@ -8,7 +8,7 @@ function parse(filename)
         while !eof(file)
             line = readline(file)
             # find nfet and pfet
-            device_str = r"model.*=.*\.(.*):.*([n|p]fet).*"
+            device_str = r"model.*=\ (.*):.*([n|p]fet).*"
             # find vgs, vds, vth, id
             param_str = r"(vgs|vds|vth|id|vdsat)[ ]*=(.*)"
             m = match(device_str ,line)
@@ -53,7 +53,7 @@ function trasistor_mode(tras)
 end
 
 mode(tras) = println(
-    rpad(tras["type"],5),"|", rpad(tras["name"],7),"|",
+    rpad(tras["type"],5),"|", rpad(tras["name"],10),"|",
     rpad(trasistor_mode(tras),12),
     "| |vgs-vth| = ", rpad(abs(tras["vgs"]-tras["vth"]),23),
     "| vgs = ", rpad(tras["vgs"],17),

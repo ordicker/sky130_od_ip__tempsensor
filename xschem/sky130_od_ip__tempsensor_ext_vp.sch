@@ -14,9 +14,9 @@ lab=vss}
 N 880 -280 1010 -280 {
 lab=vdd}
 N 880 -220 880 -160 {
-lab=Vbe1}
+lab=vbe1}
 N 1010 -220 1010 -160 {
-lab=Vbe2}
+lab=vbe2}
 N 920 -130 970 -130 {
 lab=vss}
 N 880 -100 880 -80 {
@@ -40,9 +40,9 @@ lab=vp}
 N 950 -130 950 -80 {
 lab=vss}
 N 840 -190 880 -190 {
-lab=Vbe1}
+lab=vbe1}
 N 1010 -190 1060 -190 {
-lab=Vbe2}
+lab=vbe2}
 N 50 -220 90 -220 {
 lab=vbg}
 N 970 -250 970 -240 {
@@ -85,8 +85,6 @@ N 325 -350 375 -350 {
 lab=vdd}
 N 275 -110 335 -110 {
 lab=ena}
-N 185 -180 245 -180 {
-lab=vbg}
 N 495 -180 525 -180 {
 lab=vp}
 N 525 -230 525 -180 {
@@ -121,6 +119,28 @@ N 605 -280 630 -280 {
 lab=ena}
 N 50 -180 90 -180 {
 lab=ena}
+N 1260 -300 1290 -300 {
+lab=vdd}
+N 1260 -280 1290 -280 {
+lab=vss}
+N 1260 -260 1290 -260 {
+lab=ena}
+N 1260 -240 1290 -240 {
+lab=vbe1}
+N 1260 -150 1290 -150 {
+lab=vdd}
+N 1260 -130 1290 -130 {
+lab=vss}
+N 1260 -110 1290 -110 {
+lab=ena}
+N 1260 -90 1290 -90 {
+lab=vbe2}
+N 215 -180 245 -180 {
+lab=vbg}
+N 1590 -150 1640 -150 {
+lab=Vbe2}
+N 1590 -300 1640 -300 {
+lab=Vbe1}
 C {devices/ipin.sym} 50 -300 0 0 {name=p1 lab=vdd
 }
 C {devices/ipin.sym} 50 -260 0 0 {name=p3 lab=vss
@@ -141,15 +161,15 @@ C {devices/lab_pin.sym} 930 -50 0 0 {name=p11 sig_type=std_logic lab=vss
 }
 C {devices/lab_pin.sym} 1110 -240 0 1 {name=p12 sig_type=std_logic lab=vp
 }
-C {devices/opin.sym} 1060 -190 0 0 {name=p13 lab=Vbe2}
-C {devices/opin.sym} 840 -190 0 1 {name=p14 lab=Vbe1
+C {devices/opin.sym} 1640 -150 0 0 {name=p13 lab=Vbe2}
+C {devices/opin.sym} 1640 -300 0 0 {name=p14 lab=Vbe1
 }
 C {devices/ipin.sym} 50 -180 0 0 {name=p15 lab=ena}
 C {devices/ipin.sym} 50 -220 0 0 {name=p2 lab=vbg
 }
 C {sky130_fd_pr/pfet3_01v8_lvt.sym} 900 -250 0 1 {name=M1
 L=1
-W=1
+W=5
 body=VDD
 nf=1
 mult=1
@@ -164,7 +184,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet3_01v8_lvt.sym} 990 -250 0 0 {name=M2
 L=1
-W=1
+W=5
 body=VDD
 nf=1
 mult=5
@@ -179,7 +199,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 265 -180 0 0 {name=M4
 L=1
-W=1
+W=10
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -193,7 +213,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 475 -180 0 1 {name=M5
 L=1
-W=1
+W=10
 nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -209,7 +229,7 @@ C {devices/lab_pin.sym} 345 -50 0 0 {name=p4 sig_type=std_logic lab=vss
 }
 C {sky130_fd_pr/pfet_01v8.sym} 435 -280 0 0 {name=M7
 L=1
-W=10
+W=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -223,7 +243,7 @@ spiceprefix=X
 }
 C {sky130_fd_pr/pfet_01v8.sym} 305 -280 0 1 {name=M8
 L=1
-W=10
+W=1
 nf=1
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
@@ -238,7 +258,7 @@ spiceprefix=X
 C {devices/lab_pin.sym} 325 -350 0 0 {name=p6 sig_type=std_logic lab=vdd}
 C {devices/lab_pin.sym} 275 -110 0 0 {name=p7 sig_type=std_logic lab=ena
 }
-C {devices/lab_pin.sym} 185 -180 0 0 {name=p8 sig_type=std_logic lab=vbg
+C {devices/lab_pin.sym} 215 -180 0 0 {name=p8 sig_type=std_logic lab=vbg
 }
 C {devices/lab_pin.sym} 575 -230 0 1 {name=p9 sig_type=std_logic lab=vp
 }
@@ -259,7 +279,7 @@ spiceprefix=X
 C {devices/lab_pin.sym} 630 -280 0 1 {name=p10 sig_type=std_logic lab=ena
 }
 C {sky130_fd_pr/nfet_01v8.sym} 355 -110 0 0 {name=M6
-L=20
+L=10
 W=1
 nf=1 
 mult=1
@@ -272,3 +292,21 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
+C {xschem/buffer.sym} 1440 -270 0 0 {name=x1}
+C {xschem/buffer.sym} 1440 -120 0 0 {name=x2}
+C {devices/lab_pin.sym} 1060 -190 0 1 {name=p16 sig_type=std_logic lab=vbe2}
+C {devices/lab_pin.sym} 840 -190 0 0 {name=p17 sig_type=std_logic lab=vbe1}
+C {devices/lab_pin.sym} 1260 -300 0 0 {name=p18 sig_type=std_logic lab=vdd
+}
+C {devices/lab_pin.sym} 1260 -150 0 0 {name=p19 sig_type=std_logic lab=vdd
+}
+C {devices/lab_pin.sym} 1260 -280 0 0 {name=p20 sig_type=std_logic lab=vss
+}
+C {devices/lab_pin.sym} 1260 -130 0 0 {name=p21 sig_type=std_logic lab=vss
+}
+C {devices/lab_pin.sym} 275 -110 0 0 {name=p22 sig_type=std_logic lab=ena
+}
+C {devices/lab_pin.sym} 1260 -260 0 0 {name=p23 sig_type=std_logic lab=ena}
+C {devices/lab_pin.sym} 1260 -110 0 0 {name=p24 sig_type=std_logic lab=ena}
+C {devices/lab_pin.sym} 1260 -90 0 0 {name=p25 sig_type=std_logic lab=vbe2}
+C {devices/lab_pin.sym} 1260 -240 0 0 {name=p26 sig_type=std_logic lab=vbe1}
