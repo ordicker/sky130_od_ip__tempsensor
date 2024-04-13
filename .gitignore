@@ -1,7 +1,6 @@
 /.magicrc
 /xschemrc
 /cace/*.spice
-/netlist/
 /cace/sky130_od_ip__tempsensor.sym
 /ngspice/
 /.spiceinit
