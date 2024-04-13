@@ -28,7 +28,7 @@ lab=#net1}
 C {devices/code.sym} -190 160 0 0 {name=s1 only_toplevel=false value=".lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt"}
 C {devices/code.sym} 40 160 0 0 {name=s2 only_toplevel=false value="
 .func mu(vbe1,vbe2) = 8.5252/(8.5252+vbe1/(vbe2-vbe1))
-.func T(mu) = 802.143*mu-255.537
+.func T(mu) = 714.015*mu-259.802
 .control
 option TEMP=25
 op

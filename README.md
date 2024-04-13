@@ -1,6 +1,7 @@
 # sky130_od_ip__tempsensor
 Temperature sensor design in sky130 technology.  #chipalooza_challenge 
-Based on [design](https://picture.iczhiku.com/resource/ieee/wHKkdSugHJQARbmb.pdf).
+~~Based on [design](https://picture.iczhiku.com/resource/ieee/wHKkdSugHJQARbmb.pdf).~~
+New design in xschem/sky130_od_ip__tempsensor_ext_vp.sch with external V ref (from external bandgap).
 
 # Specifications
 
@@ -27,10 +28,10 @@ Based on [design](https://picture.iczhiku.com/resource/ieee/wHKkdSugHJQARbmb.pdf
 | Vbe2 | signal output  | 1.8v domain |
 
 ## Currently:
-- Vbe1 ~ 450mV-650mV
-- ΔVbe=Vbe2-Vbe1 ~ 30mV-50mV
-- α = 8.56
-- T = 802.143*μ-255.537 where μ = α/(α+Vbe1/ΔVbe)
+- Vbe1 ~ 550mV-750mV
+- ΔVbe=Vbe2-Vbe1 ~ 30mV-56mV
+- α = 10.7906
+- T = 714.015*μ-259.802 where μ = α/(α+Vbe1/ΔVbe)
 ## Environment
 ```shell
 export PDK_ROOT=/usr/local/share/pdk

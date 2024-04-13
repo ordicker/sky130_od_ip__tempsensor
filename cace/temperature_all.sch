@@ -18,8 +18,6 @@ N -120 -140 -20 -140 {
 lab=vss}
 N 280 -140 570 -140 {
 lab=Vbe1}
-N -330 -20 -200 -20 {
-lab=VSUB}
 N -360 -160 -360 -80 {
 lab=vdd}
 N -360 -160 -120 -160 {
@@ -34,6 +32,12 @@ N -200 -120 -20 -120 {
 lab=#net1}
 N 280 -160 570 -160 {
 lab=Vbe2}
+N -330 -20 -80 -20 {
+lab=VSUB}
+N -80 -100 -80 -80 {
+lab=#net2}
+N -80 -100 -20 -100 {
+lab=#net2}
 C {devices/lab_pin.sym} -380 -20 0 0 {name=p1 sig_type=std_logic lab=VSUB}
 C {devices/vsource.sym} -280 -50 0 0 {name=vss value="DC \{vss\}" savecurrent=false}
 C {devices/lab_wire.sym} -120 -160 0 1 {name=p11 sig_type=std_logic lab=vdd}
@@ -41,8 +45,8 @@ C {devices/lab_wire.sym} -120 -140 0 1 {name=p24 sig_type=std_logic lab=vss}
 C {devices/lab_wire.sym} 570 -140 0 0 {name=p25 sig_type=std_logic lab=Vbe1}
 C {devices/vsource.sym} -360 -50 0 0 {name=vdd value="DC \{vdd\}" savecurrent=false}
 C {devices/code_shown.sym} -930 -180 0 0 {name=CONTROL only_toplevel=false value=".control
-.func mu(vbe1,vbe2) = 8.56/(8.56+vbe1/(vbe2-vbe1))
-.func T(mu) = 802.143*mu-255.537
+.func mu(vbe1,vbe2) = 10.7906/(10.7906+vbe1/(vbe2-vbe1))
+.func T(mu) = 714.015*mu-259.802
 option TEMP=25
 op
 let ttrim = T(mu(V(vbe1),V(vbe2)))-25
@@ -69,6 +73,7 @@ C {devices/res.sym} -330 10 0 0 {name=RSUB
 value=0.01
 device=resistor}
 C {devices/gnd.sym} -330 40 0 0 {name=l1 lab=GND}
-C {xschem/sky130_od_ip__tempsensor.sym} 130 -140 0 0 {name=x1}
 C {devices/lab_wire.sym} 570 -160 0 0 {name=p2 sig_type=std_logic lab=Vbe2}
-C {devices/vsource.sym} -200 -50 0 0 {name=Vena value="DC \{ena\}" savecurrent=false}
+C {devices/vsource.sym} -80 -50 0 0 {name=Vena value="DC \{ena\}" savecurrent=false}
+C {xschem/sky130_od_ip__tempsensor_ext_vp.sym} 130 -130 0 0 {name=x1}
+C {devices/vsource.sym} -200 -50 0 0 {name=vbandgap value="DC 1.2" savecurrent=false}
