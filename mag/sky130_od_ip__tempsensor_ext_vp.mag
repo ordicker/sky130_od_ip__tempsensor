@@ -1,0 +1,76 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1713093572
+<< locali >>
+rect 5954 2614 6604 2620
+rect 5954 2596 10048 2614
+rect 3514 2432 10048 2596
+rect 3514 2430 6604 2432
+rect 3514 1864 3680 2430
+rect 4134 1856 4560 2430
+rect 5014 1860 5474 2430
+rect 5938 1878 6604 2430
+rect 7066 2372 10044 2432
+rect 7066 1886 7684 2372
+rect 9930 1878 10040 2372
+rect 5938 1864 6072 1878
+rect 5932 1632 6484 1666
+rect 3520 760 3674 1632
+rect 3522 568 3674 760
+rect 5930 582 6484 1632
+rect 7304 582 8418 1672
+rect 9370 582 10036 1680
+rect 5930 568 10038 582
+rect 3522 326 10038 568
+rect 3522 324 6484 326
+rect 5932 320 6484 324
+use buffer  x1
+timestamp 1713093572
+transform 1 0 16241 0 1 5070
+box 726 -1956 5440 496
+use buffer  x2
+timestamp 1713093572
+transform 1 0 20593 0 1 1776
+box 726 -1956 5440 496
+use sky130_fd_pr__pfet_01v8_lvt_3VR9VM  XM1
+timestamp 1713031642
+transform 1 0 6834 0 1 2179
+box -296 -319 296 319
+use sky130_fd_pr__pfet_01v8_lvt_6VRZAW  XM2
+timestamp 1713031642
+transform 0 1 8807 -1 0 2160
+box -296 -1191 296 1191
+use sky130_fd_pr__pfet_01v8_3HMWVM  XM3
+timestamp 1713031642
+transform 1 0 4788 0 1 2179
+box -296 -319 296 319
+use sky130_fd_pr__nfet_01v8_69TQ3K  XM4
+timestamp 1713031642
+transform 1 0 3908 0 1 1314
+box -296 -310 296 310
+use sky130_fd_pr__nfet_01v8_69TQ3K  XM5
+timestamp 1713031642
+transform 1 0 5706 0 1 1316
+box -296 -310 296 310
+use sky130_fd_pr__nfet_01v8_NXBWHY  XM6
+timestamp 1713031642
+transform 1 0 4808 0 1 798
+box -1196 -310 1196 310
+use sky130_fd_pr__pfet_01v8_3HMWVM  XM7
+timestamp 1713031642
+transform 1 0 5708 0 1 2179
+box -296 -319 296 319
+use sky130_fd_pr__pfet_01v8_3HMWVM  XM8
+timestamp 1713031642
+transform 1 0 3910 0 1 2183
+box -296 -319 296 319
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40  XQ_BL1 $PDKPATH/libs.ref/sky130_fd_pr/mag
+timestamp 1698934549
+transform 1 0 6224 0 1 330
+box 0 0 1340 1340
+use sky130_fd_pr__rf_pnp_05v5_W3p40L3p40  XQ_BR1
+timestamp 1698934549
+transform 1 0 8160 0 1 310
+box 0 0 1340 1340
+<< end >>
