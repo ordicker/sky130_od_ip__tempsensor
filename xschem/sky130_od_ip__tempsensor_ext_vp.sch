@@ -138,15 +138,21 @@ lab=vbe2}
 N 215 -180 245 -180 {
 lab=vbg}
 N 1590 -150 1640 -150 {
-lab=Vbe2}
+lab=vbe2_output}
 N 1590 -300 1640 -300 {
-lab=Vbe1}
-N 870 -250 880 -250 {}
-N 870 -280 870 -250 {}
-N 870 -280 880 -280 {}
-N 1010 -250 1020 -250 {}
-N 1020 -280 1020 -250 {}
-N 1010 -280 1020 -280 {}
+lab=vbe1_out}
+N 870 -250 880 -250 {
+lab=vdd}
+N 870 -280 870 -250 {
+lab=vdd}
+N 870 -280 880 -280 {
+lab=vdd}
+N 1010 -250 1020 -250 {
+lab=vdd}
+N 1020 -280 1020 -250 {
+lab=vdd}
+N 1010 -280 1020 -280 {
+lab=vdd}
 C {devices/ipin.sym} 50 -300 0 0 {name=p1 lab=vdd
 }
 C {devices/ipin.sym} 50 -260 0 0 {name=p3 lab=vss
@@ -167,8 +173,8 @@ C {devices/lab_pin.sym} 930 -50 0 0 {name=p11 sig_type=std_logic lab=vss
 }
 C {devices/lab_pin.sym} 1110 -240 0 1 {name=p12 sig_type=std_logic lab=vp
 }
-C {devices/opin.sym} 1640 -150 0 0 {name=p13 lab=Vbe2}
-C {devices/opin.sym} 1640 -300 0 0 {name=p14 lab=Vbe1
+C {devices/opin.sym} 1640 -150 0 0 {name=p13 lab=vbe2_out}
+C {devices/opin.sym} 1640 -300 0 0 {name=p14 lab=vbe1_out
 }
 C {devices/ipin.sym} 50 -180 0 0 {name=p15 lab=ena}
 C {devices/ipin.sym} 50 -220 0 0 {name=p2 lab=vbg
