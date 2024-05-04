@@ -405,4 +405,6 @@ flabel metal1 -62 1158 138 1358 0 FreeSans 256 0 0 0 vbe2_out
 port 2 nsew
 flabel locali 30 2508 230 2708 0 FreeSans 256 0 0 0 vss
 port 1 nsew
+<< properties >>
+string MASKHINTS_PSDM 4536 -2100 4694 -760
 << end >>
